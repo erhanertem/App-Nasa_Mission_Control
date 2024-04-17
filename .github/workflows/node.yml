@@ -1,0 +1,35 @@
+# prettier-ignore
+# DEFINE A GITHUB WORKFLOW PIPELINE
+# name of the workflow
+name: NASA Project CI
+
+# define the events that trigger the workflow
+on:
+   push:
+      branches: [main]
+   pull_request:
+      branches: [main]
+
+# jobs to accomplish on the triggering events
+jobs:
+   # name of the jobs
+   build:
+      runs-on: windows-latest
+      steps:
+         # Action #1 - Built-in GitHub checkout action
+         # About script: This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
+         - uses: actions/checkout@v4 # Action script without a tag
+         # Action #2 -
+         # Provide tag for the action
+         - name: Use Node.js version 20
+           uses: actions/setup-node@v4
+           # Pass in option for node-version
+           with:
+              node-version: '20'
+         # Install npm
+         - run: npm install
+         # Run npm commands from package.json @ project root
+         - run: npm run build_win --prefix client
+
+   # deploy:
+   #    needs: build
