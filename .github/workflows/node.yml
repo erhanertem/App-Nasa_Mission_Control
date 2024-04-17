@@ -25,7 +25,7 @@ jobs:
            uses: actions/setup-node@v4
            # Pass in option for node-version
            with:
-              node-version: '20'
+              node-version: "20"
          # Install npm
          - run: npm install
          # Run npm commands from package.json @ project root
