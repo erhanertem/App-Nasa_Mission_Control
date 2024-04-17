@@ -14,6 +14,13 @@ on:
 jobs:
    # name of the jobs
    build:
+      env:
+         # Tells GitHub we are in CI environment and disables watch mode which is necessary for running 'npm test' task
+         CI: true
+         # PORT: 9000
+      strategy:
+         matrix:
+            node-version: [14.x, 16.x, 20.x]
       runs-on: ubuntu-latest
       steps:
          # Action #1 - Built-in GitHub checkout action
@@ -21,15 +28,17 @@ jobs:
          - uses: actions/checkout@v4 # Action script without a tag
          # Action #2 -
          # Provide tag for the action
-         - name: Use Node.js version 20
+         - name: Use Node.js version ${{matrix.node-version}}
            uses: actions/setup-node@v4
            # Pass in option for node-version
            with:
-              node-version: "20"
+              # node-version: "20"
+              node-version: ${{matrix.node-version}}
          # Install npm
          - run: npm install
          # Run npm commands from package.json @ project root
          - run: npm run build_mac --prefix client
+         - run: npm test
 
    # deploy:
    #    needs: build
