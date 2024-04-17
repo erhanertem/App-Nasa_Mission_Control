@@ -14,7 +14,7 @@ on:
 jobs:
    # name of the jobs
    build:
-      runs-on: windows-latest
+      runs-on: ubuntu-latest
       steps:
          # Action #1 - Built-in GitHub checkout action
          # About script: This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
@@ -29,7 +29,7 @@ jobs:
          # Install npm
          - run: npm install
          # Run npm commands from package.json @ project root
-         - run: npm run build_win --prefix client
+         - run: npm run build_mac --prefix client
 
    # deploy:
    #    needs: build
