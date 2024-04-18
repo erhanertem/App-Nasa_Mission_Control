@@ -8,7 +8,7 @@
 
 &emsp;
 
-#### Link to Project &rarr; [Nasa Mission Control-App](https://...)
+#### Link to Project &rarr; [Nasa Mission Control-App](http://54.163.71.203:8000/launch)
 
 ![Screenshot](screenshot.gif)
 
