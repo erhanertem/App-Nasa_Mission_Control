@@ -17,14 +17,14 @@ jobs:
       env:
          # Tells GitHub we are in CI environment and disables watch mode which is necessary for running 'npm test' task
          CI: true
-         # 'mongodb://localhost/' + name of the mongodb database (nasa)
+         # Default mongoDB local connection string (mongodb://localhost/) + name of the mongodb database (nasa) for local testing
          MONGO_URL: mongodb://localhost/nasa
          # Specify a custom PORT for the server
          # PORT: 9000
       strategy:
          matrix:
-            node-version: ["16.x"]
-            mongodb-version: ["4.4"]
+            node-version: ["20.12.2"]
+            mongodb-version: ["7.0.7"]
       runs-on: ubuntu-latest
       # --> DEFINE STEPS FOR THE WORKKFLOW
       steps:
