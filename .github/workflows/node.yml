@@ -23,8 +23,8 @@ jobs:
          # PORT: 9000
       strategy:
          matrix:
-            node-version: [14.x, 16.x]
-            mongodb-version: [4.4]
+            node-version: ["16.x"]
+            mongodb-version: ["4.4"]
       runs-on: ubuntu-latest
       # --> DEFINE STEPS FOR THE WORKKFLOW
       steps:
