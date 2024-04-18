@@ -1,4 +1,5 @@
 # Add a node.js image
+# FROM erhanertem/nasa-project:latest
 FROM node:lts-alpine
 
 # Folder where the dependency images will live @ - container root
