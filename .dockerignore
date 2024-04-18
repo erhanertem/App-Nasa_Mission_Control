@@ -1,0 +1,6 @@
+# No need to include git history 
+.git
+# We make sure that local node_modules folders are not used as a source of docker package dependencies 
+*/node_modules
+# Force to repopulate public FE folder and not use the existing one to have a fresh populated version
+server/public
