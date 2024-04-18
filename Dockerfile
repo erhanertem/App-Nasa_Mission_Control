@@ -19,7 +19,7 @@ RUN npm run install-server --omit=dev
 # Copy client folder to the container
 COPY client/ client/
 # Populate client on the server side
-RUN npm run buil_mac --prefix client
+RUN npm run build_mac --prefix client
 
 # Copy server folder to the container
 COPY server/ server/
