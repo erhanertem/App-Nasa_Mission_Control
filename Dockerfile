@@ -2,7 +2,7 @@
 # FROM erhanertem/nasa-project:latest
 FROM node:lts-alpine
 
-# Folder where the dependency images will live @ - container root
+# NOTE: The WORKDIR command is used to define the working directory of a Docker container at any given time. If the WORKDIR command is not written in the Dockerfile, it will automatically be created by the Docker compiler. Hence, it can be said that the command performs mkdir and cd implicitly. WORKDIR can be reused to set a new working directory at any stage of the Dockerfile. The path of the new working directory must be given relative to the current working directory. While directories can be manually made and changed, it is strongly recommended that you use WORKDIR to specify the current directory in which you would like to work as​ it makes troubleshooting easier.
 WORKDIR /app
 
 # COPY package.json @ APP-NASA-MISSION ROOT FOLDER TO Container ROOT <.> stands for </app>
